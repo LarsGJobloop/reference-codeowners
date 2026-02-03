@@ -5,26 +5,26 @@
 # Organization Responsible Admin
 # =============================================================================
 # License and root documentation
-/LICENSE @zabronax
-/README.md @zabronax
+/LICENSE @LarsGJobloop
+/README.md @LarsGJobloop
 
 # Fallback: all admins own .github directory
-* @zabronax
+* @LarsGJobloop
 
 # =============================================================================
 # Technical Support
 # =============================================================================
 # CI/CD workflows
-.github/workflows/ @zabronax
+.github/workflows/ @LarsGJobloop
 
 # Development Environment (tooling, scripts, etc.)
-flake.nix @zabronax
-flake.lock @zabronax
-.envrc @zabronax
+flake.nix @LarsGJobloop
+flake.lock @LarsGJobloop
+.envrc @LarsGJobloop
 
 # Project configuration
-/project/ @zabronax
-*.tf @zabronax
-*.tfvars @zabronax
-.terraform.lock.hcl @zabronax
-.gitignore @zabronax
+/project/ @LarsGJobloop
+*.tf @LarsGJobloop
+*.tfvars @LarsGJobloop
+.terraform.lock.hcl @LarsGJobloop
+.gitignore @LarsGJobloop
