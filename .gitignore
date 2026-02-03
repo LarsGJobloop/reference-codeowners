@@ -1,0 +1,4 @@
+# Infrastructure files
+.terraform
+*.tfvars
+*.tfstate*
