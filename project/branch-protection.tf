@@ -7,7 +7,7 @@ resource "github_branch_protection" "main" {
   enforce_admins = false
   # Don't require signed commits
   require_signed_commits = false
-
+  
   # Prevent deletions
   allows_deletions = false
 
@@ -20,7 +20,7 @@ resource "github_branch_protection" "main" {
   required_status_checks {
     strict = true
     contexts = [
-      "ci / format-check"
+      "ci/format-check"
     ]
   }
 
