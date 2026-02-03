@@ -19,8 +19,14 @@ resource "github_branch_protection" "main" {
 
   required_status_checks {
     strict = true
+    # Use the workflow job name here (exact match)
+    # ---.github/workflows/**.yaml
+    # jobs:
+    #   format-check:
+    #     name: format-check <--- **This** is the value to use
+    # ---
     contexts = [
-      "ci/format-check"
+      "format-check"
     ]
   }
 
