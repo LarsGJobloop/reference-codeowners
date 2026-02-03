@@ -11,8 +11,8 @@ concurrency:
 
 jobs:
   format-check:
+    name: format-check
     runs-on: ubuntu-latest
-    name: Check formatting
 
     permissions:
       contents: read
