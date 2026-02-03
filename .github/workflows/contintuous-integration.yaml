@@ -1,4 +1,4 @@
-name: Continuous Integration
+name: ci
 
 on:
   pull_request:
@@ -21,12 +21,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Install Nix
-        uses: DeterminateSystems/nix-installer-action@v11
+      - name: Setup Cachix
+        uses: cachix/cachix-action@v31
 
-      - name: Setup Nix Flakes
-        uses: DeterminateSystems/flake-check-action@v1
+      - name: Pre-build devShell
+        run: nix build --no-link .#devShells.$(nix eval --impure --raw --expr 'builtins.currentSystem').default
 
       - name: Check formatting
-        shell: nix shell --command bash -c "
+        shell: 'nix develop -c bash -e {0}'
         run: tofu fmt -check -recursive -diff
