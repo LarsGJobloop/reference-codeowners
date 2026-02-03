@@ -1,0 +1,32 @@
+name: Continuous Integration
+
+on:
+  pull_request:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  format-check:
+    runs-on: ubuntu-latest
+    name: Check formatting
+
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@v11
+
+      - name: Setup Nix Flakes
+        uses: DeterminateSystems/flake-check-action@v1
+
+      - name: Check formatting
+        shell: nix shell --command bash -c "
+        run: tofu fmt -check -recursive -diff
