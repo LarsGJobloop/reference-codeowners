@@ -1,0 +1,17 @@
+# CODEOWNERS - Experts (Individual)
+# Note: Admin and Technical Support ownership is handled by .github/CODEOWNERS
+
+# =============================================================================
+# Experts (Individual)
+# =============================================================================
+# Backend
+/content/backend/ @zabronax
+
+# Frontend
+/content/frontend/ @LarsGJobloop
+
+# Databases
+/content/databases/ @LarsGJobloop
+
+# DevOps
+/content/devops/ @LarsGJobloop
