@@ -17,6 +17,13 @@ resource "github_branch_protection" "main" {
   # Prevent non-linear history (ie merge commits)
   required_linear_history = true
 
+  required_status_checks {
+    strict = true
+    contexts = [
+      "ci/format-check"
+    ]
+  }
+
   # Review requirements
   required_pull_request_reviews {
     # Drop approvals when reviews are stale
