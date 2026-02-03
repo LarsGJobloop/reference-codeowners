@@ -4,7 +4,7 @@ resource "github_branch_protection" "main" {
   pattern = "main"
 
   # Enforce for admins as well
-  enforce_admins = true
+  enforce_admins = false
   # Don't require signed commits
   require_signed_commits = false
   
